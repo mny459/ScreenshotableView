@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4286EEED2C38E63E00E71258 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4286EEEC2C38E63E00E71258 /* Kingfisher */; };
 		965160CA2A67C17B00B18DD1 /* ScreenshotableViewExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965160C92A67C17B00B18DD1 /* ScreenshotableViewExampleApp.swift */; };
 		965160CC2A67C17B00B18DD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965160CB2A67C17B00B18DD1 /* ContentView.swift */; };
 		965160CE2A67C17B00B18DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965160CD2A67C17B00B18DD1 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4286EEED2C38E63E00E71258 /* Kingfisher in Frameworks */,
 				96F08E7F2C22D010009E030E /* ScreenshotableView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +200,7 @@
 			name = ScreenshotableViewExample;
 			packageProductDependencies = (
 				96F08E7E2C22D010009E030E /* ScreenshotableView */,
+				4286EEEC2C38E63E00E71258 /* Kingfisher */,
 			);
 			productName = ScreenshotableViewExample;
 			productReference = 965160C62A67C17B00B18DD1 /* ScreenshotableViewExample.app */;
@@ -273,6 +276,7 @@
 			mainGroup = 965160BD2A67C17B00B18DD1;
 			packageReferences = (
 				96F08E7D2C22D010009E030E /* XCLocalSwiftPackageReference ".." */,
+				4286EEEB2C38E63E00E71258 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 965160C72A67C17B00B18DD1 /* Products */;
 			projectDirPath = "";
@@ -666,7 +670,23 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		4286EEEB2C38E63E00E71258 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		4286EEEC2C38E63E00E71258 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4286EEEB2C38E63E00E71258 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		96F08E7E2C22D010009E030E /* ScreenshotableView */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ScreenshotableView;
