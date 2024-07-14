@@ -17,11 +17,19 @@ extension UIView {
 }
 
 extension View {
-    func takeScreenshot(frame:CGRect, afterScreenUpdates: Bool) -> UIImage {
-        let hosting = UIHostingController(rootView: self)
-        hosting.overrideUserInterfaceStyle = UIApplication.shared.currentUIWindow()?.overrideUserInterfaceStyle ?? .unspecified
-        hosting.view.frame = frame
-        hosting.ignoreSafeArea()
-        return hosting.view.takeScreenshot(afterScreenUpdates: afterScreenUpdates)
+    func takeScreenshot(frame: CGRect, afterScreenUpdates: Bool) -> UIImage {
+        let controller = UIHostingController(rootView: self.fixedSize(horizontal: false, vertical: true))
+        guard let view = controller.view else { return .init() }
+
+        let targetSize = controller.sizeThatFits(in: .init(width: view.intrinsicContentSize.width, height: .greatestFiniteMagnitude))
+        view.bounds = CGRect(origin: .zero, size: targetSize)
+        view.backgroundColor = .clear
+
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+
+        let image = renderer.image { _ in
+            view.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
+        return image
     }
 }
